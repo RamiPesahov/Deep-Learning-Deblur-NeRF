@@ -1,0 +1,75 @@
+num_gpu = 1
+
+expname = blurball_tcnn_aggressive_v2
+basedir = ./logs_exp
+datadir = ./data/blurball
+tbdir = ./logs_tb
+
+dataset_type = llff
+factor = 4
+llffhold = 7
+
+N_rand = 512
+chunk = 768
+netchunk = 24576
+
+N_samples = 96
+N_importance = 64
+N_iters = 30000
+
+lrate = 5e-4
+lrate_decay = 250
+
+use_viewdirs = True
+raw_noise_std = 0.0
+rgb_activate = sigmoid
+sigma_activate = relu
+
+kernel_type = deformablesparsekernel
+kernel_start_iter = 0
+kernel_ptnum = 13
+kernel_hwindow = 18
+kernel_random_hwindow = 0.02
+kernel_random_mode = input
+
+kernel_align_weight = 0.6
+align_start_iter = 0
+align_end_iter = 10000000000
+
+kernel_sparsity_weight = 0.02
+kernel_sparsity_type = tv
+sparsity_start_iter = 0
+sparsity_end_iter = 10000000000
+
+kernel_prior_weight = 0
+prior_start_iter = 0
+prior_end_iter = 10000000000
+
+kernel_img_embed = 32
+kernel_rand_embed = 2
+kernel_spatial_embed = 2
+kernel_depth_embed = 0
+
+kernel_num_hidden = 4
+kernel_num_wide = 64
+kernel_shortcut
+kernel_spatialvariant_trans
+
+tone_mapping_type = gamma
+
+render_rmnearplane = 10
+
+i_video = 10000
+i_testset = 10000
+i_weights = 5000
+i_print = 200
+i_tensorboard = 200
+
+i_embed = 1
+i_embed_views = 2
+finest_res = 512
+log2_hashmap_size = 19
+
+sparse_loss_weight = 0
+tv_loss_weight = 0
+multi_optimizer = 1

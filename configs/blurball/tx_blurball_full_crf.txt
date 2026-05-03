@@ -1,0 +1,65 @@
+num_gpu = 1
+expname = blurbasket_tcnn_crf_v6
+basedir = ./logs_exp
+datadir = ./data/blurball
+tbdir = ./logs_tb
+dataset_type = llff
+num_input_views = -1
+
+factor = 4
+llffhold = 7
+
+N_rand = 1024
+N_samples = 64
+N_importance = 16
+N_iters = 200000
+lrate = 5e-4
+lrate_decay = 250
+
+use_viewdirs = True
+raw_noise_std = 1e0
+rgb_activate = none
+i_embed = 0
+
+kernel_start_iter = 1200
+# kernel_prior_weight = 0.1
+# prior_start_iter = 15000
+kernel_align_weight = 0.1
+align_start_iter = 0
+align_end_iter = 180000
+
+kernel_type = deformablesparsekernel
+kernel_ptnum = 5
+kernel_random_hwindow = 0.15
+kernel_random_mode = input
+
+kernel_img_embed = 32
+kernel_rand_embed = 2  # the in_embed
+kernel_spatial_embed = 2
+kernel_depth_embed = 0
+
+kernel_num_hidden = 4
+kernel_num_wide = 64
+kernel_shortcut
+
+kernel_topk = 5
+occ_grid_res = 0
+occ_anchor_interval = 4
+occ_update_every = 16
+occ_warmup_steps = 3000
+occ_decay = 0.95
+occ_threshold = 0.001
+occ_density_threshold = 0.001
+
+
+
+kernel_spatialvariant_trans
+tone_mapping_type = learn
+
+render_rmnearplane = 10
+
+i_weights = 5000
+
+#Changes
+chunk = 768
+netchunk = 24576

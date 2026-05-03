@@ -1,0 +1,46 @@
+num_gpu = 1
+expname = blurball_NGP
+basedir = /content/drive/MyDrive/Deep_Learning/proj_omer/Deblur-NeRF-master/logs_exp
+datadir = data/
+tbdir = /content/tensorboard_exp
+dataset_type = llff
+
+factor = 4
+llffhold = 7
+
+N_rand = 2048
+N_samples = 64
+N_importance = 128
+N_iters = 150000
+lrate = 1e-4
+lrate_decay = 100
+
+use_viewdirs = True
+raw_noise_std = 0
+rgb_activate = sigmoid
+sigma_activate = relu
+tone_mapping_type = none
+
+kernel_type = none
+render_rmnearplane = 10
+
+use_hash = True
+hash_scene_bound = 1.5
+hash_n_levels = 16
+hash_n_features_per_level = 2
+hash_log2_hashmap_size = 19
+hash_base_resolution = 16
+hash_finest_resolution = 512
+hash_hidden_dim = 64
+hash_geo_feat_dim = 15
+hash_num_layers = 2
+
+use_occ_grid = False
+
+i_print = 100
+i_tensorboard = 200
+i_weights = 5000
+i_testset = 999999
+i_video = 999999
+
+ft_path = /content/drive/MyDrive/Deep_Learning/proj_omer/Deblur-NeRF-master/logs_exp/blurball_NGP/130000.tar

@@ -1,0 +1,77 @@
+num_gpu = 1
+expname = blurball_ngp_deblur_v8
+basedir = ./logs_exp
+datadir = ./data/blurball
+tbdir = ./tensorboard_exp
+dataset_type = llff
+
+factor = 4
+llffhold = 7
+
+N_rand = 2048
+chunk = 1024
+netchunk = 32768
+
+N_iters = 10000
+N_samples = 64
+N_importance = 0
+perturb = 1.0
+
+lrate = 5e-4
+lrate_decay = 250
+
+use_viewdirs = True
+raw_noise_std = 1.0
+rgb_activate = sigmoid
+sigma_activate = relu
+tone_mapping_type = none
+
+no_ndc = False
+lindisp = False
+spherify = False
+
+i_embed = 1
+i_embed_views = 2
+finest_res = 512
+log2_hashmap_size = 19
+sparse_loss_weight = 0.0
+tv_loss_weight = 1e-6
+multi_optimizer = 1
+
+kernel_type = deformablesparsekernel
+kernel_start_iter = 0
+kernel_ptnum = 10
+kernel_random_hwindow = 0.03
+kernel_img_embed = 32
+kernel_rand_dim = 2
+kernel_rand_embed = 3
+kernel_rand_mode = float
+kernel_random_mode = input
+kernel_spatial_embed = 0
+kernel_depth_embed = 0
+kernel_hwindow = 10
+kernel_pattern_init_radius = 0.1
+kernel_num_hidden = 3
+kernel_num_wide = 64
+
+kernel_align_weight = 0
+kernel_prior_weight = 0
+kernel_sparsity_type = tv
+kernel_sparsity_weight = 0
+
+render_rmnearplane = 10
+render_factor = 0
+
+i_print = 100
+i_tensorboard = 200
+i_weights = 5000
+i_testset = 5000
+i_video = 9999999
+
+kernel_radius_weight = 0.05
+radius_start_iter = 0
+radius_end_iter = 10000000000
+
+kernel_entropy_weight = 0.001
+entropy_start_iter = 0
+entropy_end_iter = 10000000000
